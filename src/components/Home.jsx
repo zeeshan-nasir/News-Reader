@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import { useEffect } from "react";
 import { useState } from "react";
+import { DataContext } from "../contexts/DataContext";
 
 const Home = () => {
-    const [news, setNews] = useState([]);
     const [category, setCategory] = useState("");
 
     const categories = [
@@ -16,6 +16,8 @@ const Home = () => {
         "Sports",
         "Technology",
     ];
+
+    const { getData, news } = useContext(DataContext);
 
     useEffect(() => {
         const getNews = async () => {
@@ -31,9 +33,7 @@ const Home = () => {
             );
 
             let data = await fetched.json();
-            // console.log(data.articles);
-            setNews(data.articles);
-            console.log(news);
+            getData(data.articles);
         };
 
         getNews();
