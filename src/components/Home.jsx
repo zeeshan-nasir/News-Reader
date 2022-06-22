@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
 import { useEffect } from "react";
 import { useState } from "react";
 import { DataContext } from "../contexts/DataContext";
 
 const Home = () => {
     const [category, setCategory] = useState("");
+    const [country, setCountry] = useState("us");
 
     const categories = [
         "Business",
@@ -17,12 +19,22 @@ const Home = () => {
         "Technology",
     ];
 
+    const countries = [
+        ["ar", "Argentina"],
+        ["at", "Austria"],
+        ["cu", "Cuba"],
+        ["fr", "France"],
+        ["nz", "New Zealand"],
+        ["ro", "Romania"],
+        ["in", "India"],
+    ];
+
     const { getData, news } = useContext(DataContext);
 
     useEffect(() => {
         const getNews = async () => {
             let fetched = await fetch(
-                `https://newsapi.org/v2/top-headlines?country=us&category=${category}`,
+                `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}`,
                 {
                     method: "GET",
                     headers: {
@@ -37,13 +49,18 @@ const Home = () => {
         };
 
         getNews();
-    }, [category]);
+    }, [category, country]);
+
+    const handleChange = (e) => {
+        const data = e.target.value;
+        setCountry(data);
+    };
 
     return (
         <div className="home-div">
             <div className="home-sidebar">
                 <div className="sidebar-categories">
-                    <p>Categories:</p>
+                    <p>Category:</p>
                     <div>
                         {categories.map((e) => {
                             return (
@@ -59,6 +76,23 @@ const Home = () => {
                                 </p>
                             );
                         })}
+                    </div>
+                    <p style={{ marginTop: "40px" }}>Country:</p>
+                    <div>
+                        <Form.Select
+                            className="sidebar-country"
+                            onChange={handleChange}
+                            aria-label="Default select example"
+                        >
+                            <option disabled>Select</option>
+                            {countries.map((e, i) => {
+                                return (
+                                    <option key={i} value={e[0]}>
+                                        {e[1]}
+                                    </option>
+                                );
+                            })}
+                        </Form.Select>
                     </div>
                 </div>
             </div>

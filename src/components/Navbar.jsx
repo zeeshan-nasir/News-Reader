@@ -50,7 +50,7 @@ export const NavbarComp = () => {
     return (
         <Navbar bg="light" fixed="top" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">World News</Navbar.Brand>
+                <Navbar.Brand className="navbar-title">World News</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -58,7 +58,9 @@ export const NavbarComp = () => {
                         style={{ maxHeight: "100px" }}
                         navbarScroll
                     >
-                        <Nav.Link onClick={getNews}>Top Headlines</Nav.Link>
+                        <Nav.Link className="headlines-text" onClick={getNews}>
+                            Top Headlines
+                        </Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
@@ -69,7 +71,7 @@ export const NavbarComp = () => {
                             className="me-4"
                             aria-label="Search"
                         />
-                        <Button onClick={handleClick} variant="outline-success">
+                        <Button onClick={handleClick} variant="primary">
                             Search
                         </Button>
                     </Form>
