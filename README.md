@@ -1,3 +1,14 @@
+Deployed link but needs paid api for it to work: https://world-news-reader.netlify.app/
+
+# Site Preview
+
+https://user-images.githubusercontent.com/93468404/175254408-13410ef7-6568-4637-b8f7-a1a5c1d81cbb.mp4
+
+
+# Home Page
+
+![News reader](https://user-images.githubusercontent.com/93468404/175250845-950e3715-71e1-410c-8ada-43ea4e2a87c3.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
