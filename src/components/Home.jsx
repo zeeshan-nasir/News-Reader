@@ -10,7 +10,6 @@ const Home = () => {
     const [category, setCategory] = useState("");
     const [country, setCountry] = useState("us");
     const [searchParams, setSearchParams] = useSearchParams();
-    console.log("searchParams:", searchParams);
 
     const categories = [
         "Business",
