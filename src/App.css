@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 100%;
+  max-height: 100vh;
 }
 
 /* Home page */
@@ -14,6 +16,7 @@
   width: 200px;
   background-color: rgb(248, 249, 250);
   padding-top: 40px;
+  min-height: 100vh;
 }
 
 .home-newsfeed {
