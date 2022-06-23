@@ -18,7 +18,7 @@ export const NavbarComp = () => {
             {
                 method: "GET",
                 headers: {
-                    Authorization: "Bearer a232ce819fcd4f47abd564b9762ecd9b",
+                    Authorization: "Bearer 647f413c5b684642a1e520134c558037",
                 },
             }
         );
@@ -33,7 +33,7 @@ export const NavbarComp = () => {
             {
                 method: "GET",
                 headers: {
-                    Authorization: "Bearer a232ce819fcd4f47abd564b9762ecd9b",
+                    Authorization: "Bearer 647f413c5b684642a1e520134c558037",
                 },
             }
         );

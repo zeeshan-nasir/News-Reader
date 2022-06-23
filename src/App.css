@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 /* Home page */
 
 .home-div {
@@ -14,7 +13,7 @@
 .home-sidebar {
   width: 200px;
   background-color: rgb(248, 249, 250);
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .home-newsfeed {
@@ -36,6 +35,14 @@
   max-width: 23rem;
   cursor: pointer;
   text-align: left;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.home-card:hover {
+  transform: scale(1.02);
+  transition: .5s;
 }
 
 .home-card-body {
@@ -74,6 +81,7 @@
 
 .headlines-text {
   color: rgb(13, 110, 253);
+  margin-left: 10px;
 }
 
 .headlines-text:hover {
@@ -81,9 +89,8 @@
 }
 
 .navbar-title {
-  padding-left: 22px;
+  padding-left: 27px;
   font-weight: bold;
-  margin-right: 50px;
   font-size: 22px !important;
   color: rgb(13, 110, 253) !important;
 }

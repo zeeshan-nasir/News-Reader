@@ -4,10 +4,13 @@ import Form from "react-bootstrap/Form";
 import { useEffect } from "react";
 import { useState } from "react";
 import { DataContext } from "../contexts/DataContext";
+import { useSearchParams } from "react-router-dom";
 
 const Home = () => {
     const [category, setCategory] = useState("");
     const [country, setCountry] = useState("us");
+    const [searchParams, setSearchParams] = useSearchParams();
+    console.log("searchParams:", searchParams);
 
     const categories = [
         "Business",
@@ -39,13 +42,15 @@ const Home = () => {
                     method: "GET",
                     headers: {
                         Authorization:
-                            "Bearer a232ce819fcd4f47abd564b9762ecd9b",
+                            "Bearer 647f413c5b684642a1e520134c558037",
                     },
                 }
             );
 
             let data = await fetched.json();
             getData(data.articles);
+
+            setSearchParams({ country: country, category: category });
         };
 
         getNews();
@@ -84,7 +89,7 @@ const Home = () => {
                             onChange={handleChange}
                             aria-label="Default select example"
                         >
-                            <option disabled>Select</option>
+                            <option>Select</option>
                             {countries.map((e, i) => {
                                 return (
                                     <option key={i} value={e[0]}>
