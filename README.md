@@ -1,6 +1,6 @@
 • A news website with search functionality, top headlines and option to view articles as per the country and category.
 
-• Deployed link but needs paid api for it to work: https://world-news-reader.netlify.app/
+• Deployed link but needs paid api for it to deployed links: https://world-news-reader.netlify.app/
 
 # Tech Stack
 • React <br>
